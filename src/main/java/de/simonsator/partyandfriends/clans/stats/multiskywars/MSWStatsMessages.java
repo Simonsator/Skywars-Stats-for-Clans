@@ -21,13 +21,27 @@ public class MSWStatsMessages extends LanguageConfiguration {
 	}
 
 	private void loadDefaultValues() {
-		set("ClanStats.Name", "MultiSkyWars");
-		set("ClanStats.Lost", "&7The clan has lost &a[LOST] &7games.");
-		set("ClanStats.Played", "&7The clan has played &a[GAMES] &7games.");
-		set("ClanStats.DestroyedBeds", "&7The clan has destroyed &a[BEDS] &7beds.");
-		set("ClanStats.KD", "&7The average K/D of the clan is &a[KD]&7.");
-		set("ClanStats.Kills", "&7The people of the clan have killed &a[KILLS] &7people.");
-		set("ClanStats.Deaths", "&7The people of the clan have died &a[DEATHS]&7 times.");
+		set("LuckSingle.Name", "MultiSkyWars-Lucky-Normal");
+		set("LuckSingle.Kills", "&7The clan has &a[KILLS] &7kills.");
+		set("LuckSingle.Wins", "&7The clan has won &a[WINS] &7times.");
+		set("LuckSingle.Assists", "&7The clan has &a[ASSISTS] &7assists.");
+		set("LuckSingle.Deaths", "&7The clan has died &a[DEATHS] &7times.");
+		set("LuckTeam.Name", "MultiSkyWars-Lucky-Team");
+		set("LuckTeam.Kills", "&7The clan has &a[KILLS] &7kills.");
+		set("LuckTeam.Wins", "&7The clan has won &a[WINS] &7times.");
+		set("LuckTeam.Assists", "&7The clan has &a[ASSISTS] &7assists.");
+		set("LuckTeam.Deaths", "&7The clan has died &a[DEATHS] &7times.");
+		set("NormalNormal.Name", "MultiSkyWars-Normal");
+		set("NormalNormal.Kills", "&7The clan has &a[KILLS] &7 kills.");
+		set("NormalNormal.Wins", "&7The clan has won &a[WINS] &7times.");
+		set("NormalNormal.Assists", "&7The clan has &a[ASSISTS] &7assists.");
+		set("NormalNormal.Deaths", "&7The clan has died &a[DEATHS] &7times.");
+		set("NormaTeam.Name", "MultiSkyWars-Team");
+		set("NormaTeam.Kills", "&7The clan has &a[KILLS] &7 kills.");
+		set("NormaTeam.Wins", "&7The clan has won &a[WINS] &7times.");
+		set("NormaTeam.Assists", "&7The clan has &a[ASSISTS] &7assists.");
+		set("NormaTeam.Deaths", "&7The clan has died &a[DEATHS] &7times.");
+
 	}
 
 	public void reloadConfiguration() throws IOException {

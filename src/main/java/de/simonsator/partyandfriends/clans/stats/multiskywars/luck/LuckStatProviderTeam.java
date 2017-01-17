@@ -11,13 +11,12 @@ import java.util.regex.Matcher;
  * @author simonbrungs
  * @version 1.0.0 17.01.17
  */
-public class LuckStatProviderSingle extends MSWStats {
-
-	public LuckStatProviderSingle(String pName, MSWStatsConnection pCon, Matcher pKillsMessage, Matcher pWinsMessage, Matcher pAssistsMessage, Matcher pDeathsMessage) {
+public class LuckStatProviderTeam extends MSWStats {
+	public LuckStatProviderTeam(String pName, MSWStatsConnection pCon, Matcher pKillsMessage, Matcher pWinsMessage, Matcher pAssistsMessage, Matcher pDeathsMessage) {
 		super(pName, pCon, pKillsMessage, pWinsMessage, pAssistsMessage, pDeathsMessage);
 	}
 
-	protected PlayerData getPlayerData(UUID player) {
-		return CONNECTION.getPlayerDataLucky(player);
+	protected PlayerData getPlayerData(UUID pPlayer) {
+		return CONNECTION.getPlayerDataLuckyTeam(pPlayer);
 	}
 }
