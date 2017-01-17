@@ -1,0 +1,6 @@
+name: MultiSkyWars-Stats-for-Clans
+version: ${project.version}
+author: Simonsator
+depends: [Clans]
+main: de.simonsator.partyandfriends.clans.stats.multiskywars.MSWStatsMain
+description: Provides stats for clans for MultiSkywars
