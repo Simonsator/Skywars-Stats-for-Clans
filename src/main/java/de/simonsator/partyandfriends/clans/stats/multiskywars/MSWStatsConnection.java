@@ -42,7 +42,7 @@ public class MSWStatsConnection extends SQLCommunication {
 		ResultSet rs = null;
 		try {
 			rs = (stmt = con.createStatement()).executeQuery("select lucky_team_kills, lucky_team_wins, lucky_team_assists, lucky_team_deaths from `"
-					+ DATABASE + "`." + "bw_stats_players WHERE player_uuid='" + pUUID.toString() + "' LIMIT 1");
+					+ DATABASE + "`." + "skywars_players WHERE player_uuid='" + pUUID.toString() + "' LIMIT 1");
 			if (rs.next())
 				return new PlayerData(rs.getInt("lucky_team_wins"), rs.getInt("lucky_team_assists"), rs.getInt("lucky_team_deaths"),
 						rs.getInt("lucky_team_kills"));
