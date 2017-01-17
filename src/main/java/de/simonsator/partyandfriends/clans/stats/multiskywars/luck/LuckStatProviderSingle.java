@@ -14,11 +14,11 @@ import java.util.List;
  * @author simonbrungs
  * @version 1.0.0 17.01.17
  */
-public class LuckStatProvider implements ClanStat {
+public class LuckStatProviderSingle implements ClanStat {
 	private final String NAME;
 	private final MSWStatsConnection CONNECTION;
 
-	public LuckStatProvider(String pName, MSWStatsConnection pCon) {
+	public LuckStatProviderSingle(String pName, MSWStatsConnection pCon) {
 		NAME = pName;
 		CONNECTION = pCon;
 	}

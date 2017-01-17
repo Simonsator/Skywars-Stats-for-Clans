@@ -22,11 +22,10 @@ public class MSWStatsConnection extends SQLCommunication {
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			rs = (stmt = con.createStatement()).executeQuery("select lucky_kills, lucky_wins, lucky_assists, games, kd, destroyedBeds, deaths from `"
+			rs = (stmt = con.createStatement()).executeQuery("select lucky_kills, lucky_wins, lucky_assists, lucky_deaths from `"
 					+ DATABASE + "`." + "bw_stats_players WHERE player_uuid='" + pUUID.toString() + "' LIMIT 1");
 			if (rs.next())
-				return new PlayerData(rs.getInt("lucky_wins"), rs.getInt("lucky_assists"), rs.getInt("games"),
-						rs.getInt("destroyedBeds"), rs.getDouble("kd"), rs.getInt("deaths"),
+				return new PlayerData(rs.getInt("lucky_wins"), rs.getInt("lucky_assists"), rs.getInt("lucky_deaths"),
 						rs.getInt("lucky_kills"));
 		} catch (SQLException e) {
 			e.printStackTrace();
