@@ -1,7 +1,5 @@
 package de.simonsator.partyandfriends.clans.stats.multiskywars;
 
-import de.simonsator.bedwarsstatsrel.BWConnection;
-import de.simonsator.bedwarsstatsrel.BWSMessages;
 import de.simonsator.partyandfriends.api.pafplayers.OnlinePAFPlayer;
 import de.simonsator.partyandfriends.api.pafplayers.PAFPlayer;
 import de.simonsator.partyandfriends.clan.api.Clan;
@@ -22,17 +20,17 @@ import java.util.List;
  */
 public class MSWStatsMain extends Plugin {
 	private Configuration config;
-	private BWConnection connection;
+	private MSWStatsConnection connection;
 	private Configuration messagesConfig;
 
 	public void onEnable() {
 		try {
 			config = (new MSWStatsConfig(new File(getDataFolder(), "config.yml"))).getCreatedConfiguration();
-			messagesConfig = (new BWSMessages(Language.OWN, new File(getDataFolder(), "messages.yml"))).getCreatedConfiguration();
+			messagesConfig = (new MSWStatsMessages(Language.OWN, new File(getDataFolder(), "messages.yml"))).getCreatedConfiguration();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		connection = new MSWStatsMain(config.getString("database.db"), "jdbc:mysql://" + config.getString("database.host") + ":" + config.getInt("database.port"), config.getString("database.user"), config.getString("database.password"));
+		connection = new MSWStatsConnection(config.getString("database.db"), "jdbc:mysql://" + config.getString("database.host") + ":" + config.getInt("database.port"), config.getString("database.user"), config.getString("database.password"));
 		((Stats) ClanCommands.getInstance().getSubCommand(Stats.class)).registerClanStats(this, this);
 	}
 

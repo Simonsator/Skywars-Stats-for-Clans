@@ -17,17 +17,17 @@ public class MSWStatsConnection extends SQLCommunication {
 		super(pDatabase, pURL, pUserName, pPassword);
 	}
 
-	public PlayerData getPlayerData(UUID pUUID) {
+	public PlayerData getPlayerDataLucky(UUID pUUID) {
 		Connection con = getConnection();
 		Statement stmt = null;
 		ResultSet rs = null;
 		try {
-			rs = (stmt = con.createStatement()).executeQuery("select kills, wins, loses, games, kd, destroyedBeds, deaths from `"
-					+ DATABASE + "`." + "bw_stats_players WHERE uuid='" + pUUID.toString() + "' LIMIT 1");
+			rs = (stmt = con.createStatement()).executeQuery("select lucky_kills, lucky_wins, lucky_assists, games, kd, destroyedBeds, deaths from `"
+					+ DATABASE + "`." + "bw_stats_players WHERE player_uuid='" + pUUID.toString() + "' LIMIT 1");
 			if (rs.next())
-				return new PlayerData(rs.getInt("wins"), rs.getInt("loses"), rs.getInt("games"),
+				return new PlayerData(rs.getInt("lucky_wins"), rs.getInt("lucky_assists"), rs.getInt("games"),
 						rs.getInt("destroyedBeds"), rs.getDouble("kd"), rs.getInt("deaths"),
-						rs.getInt("kills"));
+						rs.getInt("lucky_kills"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
