@@ -23,6 +23,10 @@ public class MSWStatsConfig extends ConfigurationCreator {
 		set("database.db", "minecraft");
 		set("database.user", "root");
 		set("database.password", "password");
+		set("Use.LuckySolo", true);
+		set("Use.LuckyTeam", true);
+		set("Use.NormalSolo", true);
+		set("Use.NormalTeam", true);
 	}
 
 	public void reloadConfiguration() throws IOException {
